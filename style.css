@@ -1,4 +1,155 @@
-body {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    
+body {
+    background: linear-gradient(-45deg, #c9d3ff, #ffffff, #006bcf, #fff2f9);
+    animation: gradient 15s ease infinite;
+    background-size: 300% 400%;
+    height: 100vh;
+    overflow: hidden;
+
+
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.titre {
+
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5rem;
+    color: #0327c5;
+    text-shadow: 1px 3px 2px rgb(255, 255, 255);
+
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+
+}
+
+.image {
+    top: -50px;
+    left: -20px;
+    position: absolute;
+    height: 150px;
+}
+
+.image2 {
+    height: 300px;
+    position: absolute;
+    bottom: -100px;
+    left: 150px;
+
+    @media (min-width: 768px) {
+        left: 500px;
+
+    }
+
+    @media (min-width: 1280px) {
+        left: 1600px;
+    }
+
+}
+
+.content {
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    height: 70vh;
+    position: relative;
+    border: rgb(0, 0, 0) 1px solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.svg {
+    height: 40px;
+    fill: #006bcf;
+}
+
+.contentCookie {
+    border-radius: 8px;
+    width: 90vw;
+    bottom: 10px;
+    height: 30vh;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 2;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 30px;
+    right: -400px;
+    transition: right 0.5s ease;
+
+    @media (min-width: 768px) {
+
+        right: -700px;
+    }
+
+    @media (min-width: 1024px) {
+        right: -1000px;
+    }
+
+    @media (min-width: 1440px) {
+        right: -1300px;
+    }
+
+    @media (min-width: 1280px) {
+        right: -1800px;
+    }
+}
+
+.contentCookie.show {
+    right: 5px;
+
+    @media (min-width: 768px) {}
+
+}
+
+.contentCookie__header {
+    display: flex;
+    font-size: 1.5rem;
+    color: #006bcf;
+}
+
+h2 {
+    margin-left: 20px;
+}
+
+.contentCookie__description {
+    margin-left: 20px;
+}
+
+.contentCookie__buttons {
+    display: flex;
+    gap: 30px;
+    margin-left: 20px;
+}
+
+.button {
+    height: 30px;
+    width: 80px;
+
 }
