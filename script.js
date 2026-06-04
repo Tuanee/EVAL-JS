@@ -3,7 +3,7 @@ const buttons = document.querySelectorAll(".button");
 console.log(cookieBox, buttons);
 
 function executesCodes() {
-    // if (document.cookie.includes("true")) return;
+    if (document.cookie.includes("true")) return;
     cookieBox.classList.add("show");
 
 
