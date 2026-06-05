@@ -28,9 +28,8 @@ const add = document.querySelector("#add");
 const ul = document.querySelector("#ul");
 
 function ajouterUnElement() {
-    //le IF c'est si y'a pas de chaine de caractère dans mon input ça execute pas le code
-    if (inputText.value == "") {
-        return;
+if (inputText.value == "") {
+        return
     }
     //puis là j'ai crée mes element des div dans des div... c'était le plus facile a force d'en faire
     let createLi = document.createElement("li");
@@ -48,7 +47,7 @@ function ajouterUnElement() {
     createP.innerText = inputText.value;
     createP.classList.add("listtext");
 
-//la je fais en sorte que le bouton X supprime l'element qu'il a ajouté
+    //la je fais en sorte que le bouton X supprime l'element qu'il a ajouté
     function supprimerUnElement() {
         createLi.remove()
     }
@@ -57,6 +56,30 @@ function ajouterUnElement() {
 
 
 }
-
-
+//appel de ma fonction pour qu'elle fonctionne 
 add.addEventListener("click", ajouterUnElement);
+
+//là je vais essayer de faire un filtre qui se déplie + qui fonctionne
+const filtre = document.querySelector("#filtre");
+
+
+// PARTIE LOCAL STORAGE ????? (j'ai lu trop de doc et regardé trop de vidéo..)
+//mon tableau vide qui va contenir les task que l'utilisateur va crée
+let tasks = []
+function save() {
+    //je converti mes elements dans mon tableau en string pck mon localstorage peut SEULEMENT stocker des strings
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+}
+// j'insère le nom dans mon tableau
+function createTask(taskName) {
+    tasks.push(taskName)
+}
+
+//quand l'utilisateur va ecrire qqchd ans l'input et cliquer sur le bouton add, ça va crée une const avec comme valeur une string + ca va l'enregistrer dans mon tableau sous ce nom
+
+add.addEventListener("click", () => {
+    const nom = inputText.value
+    createTask(nom)
+    save()
+})
+
